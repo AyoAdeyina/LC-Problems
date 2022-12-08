@@ -9,7 +9,7 @@
 # 1 --> 1
 # 2 --> 10
 
-# Type: Binary (Dynamic Programming)
+# Type: Binary (Dynamic Programming)  O(n), nlogn
 
 class Solution(object):
     def countBits(self, n):
