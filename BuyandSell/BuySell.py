@@ -26,6 +26,7 @@ class Solution(object):
                 MaxP = max(MaxP,MadeMoney)
             else:
                 # We want the left pointer to be at the minimum, thats why we set it equal to right pointer
+                #if the left price is not lower than the right we want to shift it all the way to the right indicating we found the lowest price
                 l = r
             r += 1
         return MaxP
