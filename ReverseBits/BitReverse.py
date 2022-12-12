@@ -26,7 +26,10 @@ class Solution:
             # then in n we will have the result bit we are looking for and it would be in the ones spot
             # to get the result of the ones spot we & it with one 
             # The bit would be either one or zero 
+            # We will get the first bit from n and put it in the 31 spot of the result
             bit = (n >> i) & 1
+            # We start at the largest bit and shift down from there
             # We shift our bit to right by 31 minus i
+            # We get the bit in index one from n and putting it in index 30 in the output
             result = result | (bit << (31 - i))
         return result
