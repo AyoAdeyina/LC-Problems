@@ -26,3 +26,29 @@ class Solution(object):
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
         # So we are just taking the result of both of these function calls figuring out what the max subtree depth of both of the subtrees
         # We are adding one to it because we know that the current root node we are traversing is definitely not null
+
+
+# Type: Iteratively DFS - will need to use a stack data structure
+# using pre-order DFS with this stack 
+
+class Solution(object):
+    def maxDepth(self, root):
+        # We add the root which is the node and 1 which is the depth
+        stack = [[root, 1]]
+        # We set our result = 0 so if we do have a null root node the loop will execute, will pop the stack but then the 
+        # if statement won't execute so then the result will stay zero
+        # And if the result is non null we will end up updating the result with the if statement
+        result = 0
+        # We create while loop to say "while the stack is non-empty"
+        while stack:
+            # We are going to pop the node and depth from the stack
+            node, depth = stack.pop()
+        # We are stating here if the node is non null
+        # This if statement is preventing us from using any null nodes
+            if node:
+                # We update the result by setting it to the max of itself and the depth of the node we just popped
+                result = max(result, depth)
+                # We are appending the left node and append it with the depth of the node we just popped plus one
+                stack.append([node.left, depth + 1])
+                stack.append([node.right, depth + 1])
+        return result
